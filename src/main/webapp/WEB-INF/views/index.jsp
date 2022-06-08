@@ -6,12 +6,28 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 <html>
 <head>
-    <title>Title</title>
+
 </head>
-<body>
-    <h2>d</h2>
-<a href="/save">이동</a>
+<script>
+    const saveForm = () => {
+        location.href="/member/save";
+    }
+    const loginForm = () => {
+        location.href="/member/login";
+    }
+</script>
+<body class="  text-white bg-primary">
+
+
+ <h2> index.jsp</h2>
+
+    <button class="btn btn-warning py-1 px-0" onclick="saveForm()">회원가입</button>
+    <button class="btn btn-warning py-1 px-0" onclick="loginForm()">로그인</button>
+
 </body>
+
+
 </html>
