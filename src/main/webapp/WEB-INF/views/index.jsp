@@ -11,6 +11,18 @@
 <head>
 
 </head>
+<style>
+ h1 {
+  display: inline-block;
+ }
+
+ nav {
+  display: inline-block;
+ }
+ nav{
+  float: right;
+ }
+</style>
 <script>
     const saveForm = () => {
         location.href="/member/save";
@@ -21,11 +33,19 @@
 </script>
 <body class="  text-white bg-primary">
 
-
- <h2> index.jsp</h2>
-
-    <button class="btn btn-warning py-1 px-0" onclick="saveForm()">회원가입</button>
-    <button class="btn btn-warning py-1 px-0" onclick="loginForm()">로그인</button>
+<header>
+ <h1>index</h1>
+ <nav>
+  <ul>
+   <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
+   <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
+  </ul>
+ </nav>
+ <form class="d-flex" role="search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+ </form>
+</header>
 
 </body>
 
