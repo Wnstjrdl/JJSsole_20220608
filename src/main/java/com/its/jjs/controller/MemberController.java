@@ -37,9 +37,9 @@ public class MemberController {
     MemberDTO loginMember=memberService.login(memberDTO);
     if(loginMember != null){
        model.addAttribute("loginMember",loginMember);
-      session.setAttribute("loginMember",loginMember.getMemberId());
+      session.setAttribute("loginMemberId",loginMember.getMemberId());
       session.setAttribute("loginId",loginMember.getId());
-      return "redirect:board/pajing";
+        return "redirect:/board/paging";
     }else {
         return  "memberPages/login";
     }
