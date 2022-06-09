@@ -27,7 +27,6 @@
           <td>글번호</td>
           <td>작성자</td>
           <td>제목</td>
-          <td>내용</td>
           <td>조회수</td>
         </tr>
         <c:forEach items="${boardList}" var="board">
@@ -35,7 +34,6 @@
             <td>${board.id}</td>
             <td>${board.boardWriter}</td>
               <td><a href="/board/detail?page=${paging.page}&id=${board.id}">${board.boardTitle}</a></td>
-            <td>${board.boardContents}</td>
             <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
               value="${board.boardCreatedDate}"></fmt:formatDate></td>
             <td>${board.boardHits}</td>

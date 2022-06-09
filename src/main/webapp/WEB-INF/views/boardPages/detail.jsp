@@ -33,6 +33,8 @@
 </body>
 <c:if test="${sessionScope.loginMemberId eq board.boardWriter}">
   <button class="btn btn-danger" onclick="location.href='/board/delete?id=${board.id}'">삭제</button>
+    <button class="btn btn-danger" onclick="location.href='/board/update?id=${board.id}'">수정</button>
+
 </c:if>
 
 </html>
