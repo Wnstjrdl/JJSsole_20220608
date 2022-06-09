@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <%--
   Created by IntelliJ IDEA.
@@ -8,6 +8,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
   <head>
@@ -26,14 +28,20 @@
           <td>내용</td>
           <td>조회수</td>
         </tr>
+        <c:forEach items="${boardList}" var="board">
+          <tr>
+            <td>${board.id}</td>
+            <td>${board.boardWriter}</td>
+            <td>${board.boardTitle}</td>
+            <td>${board.boardContents}</td>
+            <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+              value="${board.boardCreatedDate}"></fmt:formatDate></td>
+            <td>${board.boardHits}</td>
 
-
-
-
-
-        </tr>
-
+          </tr>
+        </c:forEach>
       </table>
+    </div>
         <div class="container">
         <ul class="pagination justify-content-center">
         <c:choose>
@@ -81,5 +89,6 @@
         </div>
     </div>
           <a href="/board/save">글등록</a>
+
   </body>
 </html>

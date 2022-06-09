@@ -33,8 +33,20 @@ public class BoardController {
     public  String paging(@RequestParam(value = "page",required = false,defaultValue ="1")int page, Model model){
         List<BoardDTO> boardDTOList=boardService.pagingList(page);
         PageDTO paging=boardService.paging(page);
-        model.addAttribute("boardDTOList",boardDTOList);
+        model.addAttribute("boardList",boardDTOList);
         model.addAttribute("paging",paging);
         return "boardPages/pagingList";
+    }
+    // 상세 조회
+    @GetMapping("/detail")
+    public  String findById(@RequestParam("id") Long id ,Model model,
+                             @RequestParam(value ="page",required = false, defaultValue = "1") int page){
+
+                 BoardDTO boardDTO=boardService.findById(id);
+
+                 model.addAttribute("board",boardDTO);
+                 model.addAttribute("paging",page);
+
+                 return "boardPages/detail";
     }
 }

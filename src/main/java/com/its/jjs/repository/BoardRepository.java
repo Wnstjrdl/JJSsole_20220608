@@ -22,4 +22,7 @@ public class BoardRepository {
 
     public int boardCount() {return sql.selectOne("Board.count");
     }
+
+    public BoardDTO findById(Long id) {return  sql.selectOne("Board.findById",id);}
+
 }
