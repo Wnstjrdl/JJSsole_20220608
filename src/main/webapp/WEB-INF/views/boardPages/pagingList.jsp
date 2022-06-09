@@ -14,12 +14,22 @@
 <html>
   <head>
     <title>Title</title>
-      <h2>pagingList</h2>
       <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 
   </head>
   <body>
     <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
+    <h2>pagingList</h2>
+    <div class="container mt-3">
+        <form action="/board/search" method="get">
+            <select name="searchType">
+                <option value="boardTitle">제목</option>
+                <option value="boardWriter">작성자</option>
+            </select>
+                    <input type="text" name="q" placeholder="검색어입력">
+                    <input type="submit" value="검색">
+        </form>
+</div>
 
     <div class="container">
       <table class="table">

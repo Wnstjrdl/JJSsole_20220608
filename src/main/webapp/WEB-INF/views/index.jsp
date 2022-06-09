@@ -33,7 +33,6 @@
     const paging = () => {
       location.href="/board/paging"
     }
-
 </script>
 <body class="  text-white bg-primary">
 
@@ -42,14 +41,18 @@
  <nav>
   <ul>
    <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
-   <button class="btn btn-warning " onclick="loginForm()">로그인</button>
+   <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
    <button class="btn btn-warning   " onclick="paging()">게시판</button>
 
 
   </ul>
  </nav>
- <form class="d-flex" role="search">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+ <form action="/board/search" method="get" class="d-flex" role="search">
+  <select name="searchType">
+   <option value="boardTitle">제목</option>
+   <option value="boardWriter">작성자</option>
+  </select>
+  <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
   <button class="btn btn-outline-success" type="submit">Search</button>
 
  </form>
