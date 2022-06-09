@@ -33,6 +33,7 @@
     const paging = () => {
       location.href="/board/paging"
     }
+
 </script>
 <body class="  text-white bg-primary">
 
@@ -41,7 +42,7 @@
  <nav>
   <ul>
    <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
-   <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
+   <button class="btn btn-warning " onclick="loginForm()">로그인</button>
    <button class="btn btn-warning   " onclick="paging()">게시판</button>
 
 

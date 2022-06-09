@@ -64,4 +64,7 @@ private BoardRepository boardRepository;
 
     public BoardDTO findById(Long id) {return boardRepository.findById(id);
     }
+
+    public void delete(Long id) { boardRepository.delete(id);
+    }
 }

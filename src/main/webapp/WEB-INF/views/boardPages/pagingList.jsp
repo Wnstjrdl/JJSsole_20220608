@@ -15,9 +15,11 @@
   <head>
     <title>Title</title>
       <h2>pagingList</h2>
+      <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+
   </head>
   <body>
-  <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 
     <div class="container">
       <table class="table">
@@ -88,7 +90,7 @@
         </ul>
         </div>
     </div>
-          <a href="/board/save">글등록</a>
+
 
   </body>
 </html>
