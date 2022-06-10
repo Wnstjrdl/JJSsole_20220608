@@ -20,7 +20,7 @@
         글번호:<input type="text" name="id" value="${boardUpdate.id}" class="form-control" readonly><br />
         작성자:<input type="text" name="boardWriter" value="${boardUpdate.boardWriter}" class="form-control" readonly ><br />
         제목:<input type="text" name="boardTitle" value="${boardUpdate.boardTitle}" class="form-control">
-        내용:<textarea name="boardContents" rows="5" cols="10">${boardUpdate.boardContents}</textarea><br />
+        내용:<textarea name="boardContents" cols="70" rows="10">${boardUpdate.boardContents}</textarea><br />
 
         <button class="btn btn-primary" onclick="location.href='/board/update'">수정하기</button>
 

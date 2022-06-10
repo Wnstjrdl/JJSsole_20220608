@@ -17,7 +17,6 @@
         <div class="container">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><button class="btn btn-warning" onclick="location.href='/'">초기화면으로 돌아가기</button></li>
-
                 <c:if test="${sessionScope.loginMemberId != null}">
                 <li><button class="btn btn-warning" onclick="location.href='/board/save'">글작성</button></li>
                 </c:if>

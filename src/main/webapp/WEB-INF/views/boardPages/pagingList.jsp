@@ -32,11 +32,13 @@
 </div>
 
     <div class="container">
+
       <table class="table">
         <tr>
           <td>글번호</td>
           <td>작성자</td>
           <td>제목</td>
+          <td>작성시간</td>
           <td>조회수</td>
         </tr>
 
@@ -51,9 +53,15 @@
 
           </tr>
         </c:forEach>
-
       </table>
     </div>
+
+
+
+
+
+
+
         <div class="container">
         <ul class="pagination justify-content-center">
         <c:choose>

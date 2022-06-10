@@ -38,7 +38,9 @@
             </div>
     <button id="comment-write-btn" class="btn btn-primary">작성</button>
         </div>
+
 </div>
+
 
     <div id="comment-list">
         <table class="table">
