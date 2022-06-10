@@ -1,8 +1,10 @@
 package com.its.jjs.controller;
 
 import com.its.jjs.dto.BoardDTO;
+import com.its.jjs.dto.CommentDTO;
 import com.its.jjs.dto.PageDTO;
 import com.its.jjs.service.BoardService;
+import com.its.jjs.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,8 @@ import java.util.List;
 public class BoardController {
     @Autowired
     private BoardService boardService;
+    @Autowired
+    private CommentService commentService;
     //게시글 작성화면
     @GetMapping("/save")
     public  String saveForm(){
@@ -47,7 +51,12 @@ public class BoardController {
                  model.addAttribute("board",boardDTO);
                  model.addAttribute("paging",page);
 
-                 return "boardPages/detail";
+        List<CommentDTO> commentDTOList= commentService.findAll(id);
+        model.addAttribute("commentList",commentDTOList);
+        return "boardPages/detail";
+
+
+
     }
     // 글삭제
     @GetMapping("/delete")
@@ -79,4 +88,8 @@ public class BoardController {
        model.addAttribute("boardList",searchList);
       return  "boardPages/list";
     }
+
+
+
+
 }

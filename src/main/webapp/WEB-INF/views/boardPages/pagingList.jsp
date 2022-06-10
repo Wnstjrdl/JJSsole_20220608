@@ -39,6 +39,7 @@
           <td>제목</td>
           <td>조회수</td>
         </tr>
+
         <c:forEach items="${boardList}" var="board">
           <tr>
             <td>${board.id}</td>
@@ -50,6 +51,7 @@
 
           </tr>
         </c:forEach>
+
       </table>
     </div>
         <div class="container">

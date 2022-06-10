@@ -78,4 +78,7 @@ private BoardRepository boardRepository;
         List<BoardDTO> searchList=boardRepository.search(searchParam);
         return searchList;
     }
+
+
+
 }
