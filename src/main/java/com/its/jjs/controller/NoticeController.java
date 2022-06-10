@@ -11,20 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
 
+
 @Controller
 @RequestMapping("/notice")
 public class NoticeController {
     @Autowired
     private NoticeService noticeService;
    // 공지 사항작성화면
-    @PostMapping("/save")
+    @GetMapping("/save")
     public  String saveForm() {
-        return "/noticePages/save";
+        return "noticePages/save";
     }
     //공지 사항 작성처리
-    @GetMapping("/save")
-    public  String save(@ModelAttribute NoticeDTO noticeDTO) throws IOException {
+    @PostMapping("/save")
+    public  String save(@ModelAttribute NoticeDTO noticeDTO) throws IOException{
         noticeService.save(noticeDTO);
         return "redirect:/notice/paging";
     }
+
 }

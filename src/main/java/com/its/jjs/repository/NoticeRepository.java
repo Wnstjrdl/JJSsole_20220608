@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class NoticeRepository {
-    @Autowired
+   @Autowired
     private SqlSessionTemplate sql;
 
     public void save(NoticeDTO noticeDTO) {sql.insert("Notice.save",noticeDTO);
-    }
+   }
 }

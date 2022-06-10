@@ -7,12 +7,12 @@ import java.sql.Timestamp;
 
 @Data
 public class NoticeDTO {
-    Long id;
-    String noticeTitle;
-    String noticeWriter;
-    String noticeContents;
-    String noticeHits;
-    Timestamp noticeCreatedDate;
+   private Long id;
+private String noticeTitle;
+   private String noticeWriter;
+  private String noticeContents;
+      private  int noticeHits;
+   private Timestamp noticeCreatedDate;
     private MultipartFile noticeFile;
     private String  noticeFileName;
 

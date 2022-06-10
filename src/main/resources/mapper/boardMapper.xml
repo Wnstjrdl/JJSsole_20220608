@@ -17,9 +17,7 @@
             select *from board_table where ${type}
                             like concat('%',#{q} ,'%') order by id desc ;
         </select>
-    <insert id="saveNotice" parameterType="board">
-        insert into  board_table(boardTitle,boardWriter,boardContents,boardCreatedDate,boardFileName)
-        values (#{boardTitle},#{boardWriter},#{boardContents},now(),#{boardFileName})</insert>
+
 </mapper>
 
 
