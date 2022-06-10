@@ -4,5 +4,7 @@
 
 
 <mapper namespace="Notice">
-
+<insert id="save" parameterType="notice">
+    insert into  notice_table(noticeTitle,noticeWriter,noticeContents,noticeCreatedDate,noticeFileName)
+       values (#{noticeTitle},#{noticeWriter},#{noticeContents},now(),#{noticeFileName}) </insert>
 </mapper>

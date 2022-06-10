@@ -14,5 +14,7 @@ public class NoticeDTO {
     String noticeHits;
     Timestamp noticeCreatedDate;
     private MultipartFile noticeFile;
-    private String noticeFileName;
+    private String  noticeFileName;
+
+
 }
