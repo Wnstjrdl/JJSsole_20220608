@@ -1,15 +1,15 @@
 package com.its.jjs.controller;
 
 import com.its.jjs.dto.NoticeDTO;
+import com.its.jjs.dto.PageDTO;
 import com.its.jjs.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -28,5 +28,12 @@ public class NoticeController {
         noticeService.save(noticeDTO);
         return "redirect:/notice/paging";
     }
-
+    @GetMapping("/paging")
+    public  String paging(@RequestParam(value = "page",required = false,defaultValue = "1")int page, Model model){
+        List<NoticeDTO> noticeList= noticeService.pagingList(page);
+        PageDTO paging=noticeService.paging(page);
+        model.addAttribute("noticeList",noticeList);
+        model.addAttribute("paging",paging);
+          return "noticePages/pagingList";
+    }
 }
