@@ -97,5 +97,12 @@ public class MemberController {
         model.addAttribute("member",memberDTO);
         return  "memberPages/passwordCheck";
     }
+    //비밀번호체크 (회원탈퇴용)
+    @GetMapping("/passwordCheckDelete")
+    public String passwordCheckDelete(@RequestParam("id") Long id,Model model){
+        MemberDTO memberDTO=memberService.findById(id);
+        model.addAttribute("member",memberDTO);
+        return  "memberPages/passwordCheckDelete";
+    }
 
 }

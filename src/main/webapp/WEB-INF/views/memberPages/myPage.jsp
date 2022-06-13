@@ -33,8 +33,8 @@
     회원이메일: ${member.memberEmail}<br />
     회원전화번호:${member.memberMobile}<br />
 
-    <a href="/member/delete?id=${member.id}">회원탈퇴</a>
     <button class="btn btn-primary" onclick="memberUpdate()">수정</button>
+    <button class="btn btn-danger" onclick="memberDelete()">회원탈퇴</button>
     <button class="btn btn-primary" onclick="back()">돌아가기</button>
 
 
@@ -49,6 +49,9 @@
     const back = () => {
         location.href="/";
 
+    }
+    const  memberDelete = () => {
+        location.href="/member/passwordCheckDelete?id=${member.id}";
     }
 
 </script>

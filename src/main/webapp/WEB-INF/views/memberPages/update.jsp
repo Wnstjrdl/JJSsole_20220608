@@ -24,13 +24,9 @@
             이메일:<input type="text" name="memberEmail" value="${memberUpdate.memberEmail}" class="form-control" readonly><br />
             전화번호:<input type="text" name="memberMobile" value="${memberUpdate.memberMobile}" class="form-control" ><br />
             <button class="btn btn-primary" onclick="location.href='/member/update'">수정하기</button>
-
-
-
-
-
         </form>
 
+    
 
     </div>
 </div>
@@ -48,5 +44,15 @@
             alert("비밀번호가 일치하지않습니다")
         }
     }
+    const memberDelete = () => {
+        const passwordConfirm= document.getElementById("passwordConfirm").value;
+        const  passwordDB='${member.memberPassword}';
+        if(passwordConfirm == passwordDB){
+            deleteForm.submit();
+        }else {
+            alert("비밀번호가 일치하지않습니다")
+        }
+    }
+
 </script>
 </html>

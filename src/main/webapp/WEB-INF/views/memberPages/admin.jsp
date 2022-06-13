@@ -1,4 +1,3 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -8,11 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
+  <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-</head>
-<body>
-<button class="btn btn-warning"><a href="/member/findAll">회원 목록으로이동</a></button>
-</body>
+    <h2>admin.jsp</h2>
+  </head>
+  <body>
+  <button class="btn btn-warning"><a  href="/member/findAll">회원목록으로 이동</a></button>
+  </body>
 </html>
