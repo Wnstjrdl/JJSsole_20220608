@@ -90,5 +90,12 @@ public class MemberController {
         session.invalidate();
         return "index";
     }
+    // 비밀번호 체크
+    @GetMapping("/passwordCheck")
+    public String passwordCheck(@RequestParam("id") Long id,Model model){
+        MemberDTO memberDTO=memberService.findById(id);
+        model.addAttribute("member",memberDTO);
+        return  "memberPages/passwordCheck";
+    }
 
 }

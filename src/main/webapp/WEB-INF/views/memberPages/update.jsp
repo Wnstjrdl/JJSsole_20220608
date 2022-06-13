@@ -40,7 +40,13 @@
 </body>
 <script>
     const memberUpdate = () => {
-        location.href="member/update";
+        const passwordConfirm= document.getElementById("passwordConfirm").value;
+        const  passwordDB='${memberUpdate.memberPassword}';
+        if(passwordConfirm == passwordDB){
+            updateForm.submit();
+        }else {
+            alert("비밀번호가 일치하지않습니다")
+        }
     }
 </script>
 </html>

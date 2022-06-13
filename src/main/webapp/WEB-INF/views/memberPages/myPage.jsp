@@ -34,11 +34,22 @@
     회원전화번호:${member.memberMobile}<br />
 
     <a href="/member/delete?id=${member.id}">회원탈퇴</a>
-    <a href="/member/update?id=${member.id}">정보수정</a>
-    <a href="/" >돌아가기</a>
+    <button class="btn btn-primary" onclick="memberUpdate()">수정</button>
+    <button class="btn btn-primary" onclick="back()">돌아가기</button>
+
 
 
 </div>
 </body>
+<script>
+    const  memberUpdate = () => {
+      location.href="/member/passwordCheck?id=${member.id}";
+    }
 
+    const back = () => {
+        location.href="/";
+
+    }
+
+</script>
 </html>
