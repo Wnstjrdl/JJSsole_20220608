@@ -45,6 +45,7 @@ public class MemberController {
         return  "memberPages/login";
     }
     }
+
     //관리자 전용 화면
     @GetMapping("/admin")
     public  String adminForm(){
@@ -83,4 +84,11 @@ public class MemberController {
            model.addAttribute("member",memberDTO);
                    return "memberPages/myPage";
     }
+    //로그아웃
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "index";
+    }
+
 }

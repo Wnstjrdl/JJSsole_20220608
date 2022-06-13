@@ -20,7 +20,7 @@
                 <c:if test="${sessionScope.loginMemberId != null}">
                 <li><button class="btn btn-warning" onclick="location.href='/board/save'">글작성</button></li>
                 <li><button class="btn btn-primary" onclick="location.href='/member/detail?id=${loginId}'">마이페이지로이동</button></li>
-
+                    <li><button class="btn btn-warning" onclick="location.href='/member/logout'">로그아웃</button></li>
                 </c:if>
                 <li><button class="btn btn-warning" onclick="location.href='/notice/paging'">공지사항</button></li>
            <c:if test="${sessionScope.loginMemberId eq 'admin'}">
