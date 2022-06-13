@@ -11,7 +11,9 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
+
 <body>
     <h2>findAll.jsp</h2>
 <div class="container">
@@ -23,6 +25,7 @@
             <td>회원이름</td>
             <td>회원이메일</td>
             <td>회원전화번호</td>
+            <td>회원삭제</td>
         </tr>
         <c:forEach items="${memberList}" var="member">
             <tr>
@@ -32,9 +35,12 @@
                 <td>${member.memberName}</td>
                 <td>${member.memberEmail}</td>
                 <td>${member.memberMobile}</td>
+                <td class="btn btn-warning"><a href="/member/delete?id=${member.id}">삭제하기</a> </td>
+
             </tr>
         </c:forEach>
     </table>
 </div>
 </body>
+
 </html>

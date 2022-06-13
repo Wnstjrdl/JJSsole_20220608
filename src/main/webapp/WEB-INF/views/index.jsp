@@ -38,6 +38,7 @@
     const admin = () => {
       location.href="/member/admin"
     }
+
 </script>
 <body class="  text-white bg-primary">
 
