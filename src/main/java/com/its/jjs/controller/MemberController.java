@@ -44,5 +44,11 @@ public class MemberController {
         return  "memberPages/login";
     }
     }
+    //관리자 전용 화면
+    @GetMapping("/admin")
+    public  String adminForm(){
+        return "memberPages/admin";
+    }
+
 
 }

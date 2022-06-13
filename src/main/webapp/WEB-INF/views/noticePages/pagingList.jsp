@@ -23,6 +23,18 @@
     </style>
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
+<h2>공지사항</h2>
+<div class="container mb-3">
+    <form action="/notice/search" method="get">
+        <select name="searchType">
+            <option value="noticeTitle">공지사항</option>
+        </select>
+            <input type="text" name="q" placeholder="검색어 입력">
+            <input type="submit" value="검색">
+    </form>
+</div>
+
     <div class="container mt-5">
         <table class="table">
             <tr>

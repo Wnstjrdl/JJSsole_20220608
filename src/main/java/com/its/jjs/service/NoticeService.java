@@ -75,4 +75,12 @@ public class NoticeService {
 
     public void delete(Long id) {noticeRepository.delete(id);
     }
+
+    public List<NoticeDTO> search(String searchType, String q) {
+        Map<String, String> searchParam = new HashMap<>();
+        searchParam.put("type", searchType);
+        searchParam.put("q", q);
+        List<NoticeDTO> searchList = noticeRepository.search(searchParam);
+        return searchList;
+    }
 }

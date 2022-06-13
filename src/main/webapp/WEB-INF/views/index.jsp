@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 <html>
 <head>
@@ -33,6 +35,9 @@
     const paging = () => {
       location.href="/board/paging"
     }
+    const admin = () => {
+      location.href="/member/admin"
+    }
 </script>
 <body class="  text-white bg-primary">
 
@@ -43,8 +48,9 @@
    <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
    <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
    <button class="btn btn-warning   " onclick="paging()">게시판</button>
-ㅇ
-
+   <c:if test="${sessionScope.loginMemberId eq 'admin'}">
+   <button class="btn btn-danger   " onclick="admin()">관리자 페이지로이동</button>
+   </c:if>
   </ul>
  </nav>
  <form action="/board/search" method="get" class="d-flex" role="search">

@@ -37,4 +37,7 @@ public class NoticeRepository {
 
     public void delete(Long id) {sql.delete("Notice.delete",id);
     }
+
+    public List<NoticeDTO> search(Map<String, String> searchParam) {return sql.selectList("Notice.search",searchParam);
+    }
 }

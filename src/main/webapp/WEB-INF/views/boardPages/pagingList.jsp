@@ -19,7 +19,7 @@
   </head>
   <body>
     <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-    <h2>pagingList</h2>
+    <h2>자유게시판</h2>
     <div class="container mt-3">
         <form action="/board/search" method="get">
             <select name="searchType">

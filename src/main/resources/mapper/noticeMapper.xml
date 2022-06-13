@@ -16,6 +16,9 @@
     <update  parameterType="notice" id="update">update notice_table set noticeTitle=#{noticeTitle},
                          noticeContents=#{noticeContents} where id=${id}</update>
     <delete parameterType="Long"  id="delete">delete from notice_table where id=#{id}</delete>
-
+    <select parameterType="java.util.HashMap"  id="search" resultType="notice">
+        select *from notice_table where ${type}
+                like concat('%',#{q},'%') order by id desc ;
+    </select>
 
 </mapper>

@@ -1,6 +1,6 @@
 package com.its.jjs.controller;
 
-import com.its.jjs.dto.BoardDTO;
+
 import com.its.jjs.dto.NoticeDTO;
 import com.its.jjs.dto.PageDTO;
 import com.its.jjs.service.NoticeService;
@@ -73,7 +73,15 @@ public class NoticeController {
         noticeService.delete(id);
         return "redirect:/notice/paging";
     }
+    //검색 기능
+    @GetMapping("/search")
+    public String search(@RequestParam("searchType")String searchType,
+                         @RequestParam("q") String q,Model model){
+        List<NoticeDTO> searchList=noticeService.search(searchType,q);
+        model.addAttribute("noticeList",searchList);
+          return "noticePages/list";
 
+    }
 
 
 }
