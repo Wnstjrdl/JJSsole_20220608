@@ -34,4 +34,7 @@ public class NoticeRepository {
 
     public void update(NoticeDTO noticeDTO) {sql.update("Notice.update",noticeDTO);
     }
+
+    public void delete(Long id) {sql.delete("Notice.delete",id);
+    }
 }

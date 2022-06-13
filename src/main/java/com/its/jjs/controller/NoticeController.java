@@ -67,6 +67,12 @@ public class NoticeController {
         return "redirect:/notice/detail?id="+noticeDTO.getId();
     }
 
+    //삭제 처리
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id")Long id){
+        noticeService.delete(id);
+        return "redirect:/notice/paging";
+    }
 
 
 

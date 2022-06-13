@@ -69,7 +69,7 @@
 
 </c:if>
 <c:if test="${sessionScope.loginMemberId eq 'admin'}">
-    <button class="btn btn-danger" onclick="location.href='/board/delete?id=${board.id}'">삭제</button>
+    <button class="btn btn-primary" onclick="location.href='/board/delete?id=${board.id}'">관리자용삭제</button>
 </c:if>
 
     <script>

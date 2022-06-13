@@ -28,6 +28,7 @@
 
 </body>
 <c:if test="${sessionScope.loginMemberId eq 'admin'}">
+    <button class="btn btn-danger" onclick="location.href='/notice/delete?id=${notice.id}'">삭제</button>
     <button class="btn btn-danger" onclick="location.href='/notice/update?id=${notice.id}'">수정</button>
 </c:if>
 

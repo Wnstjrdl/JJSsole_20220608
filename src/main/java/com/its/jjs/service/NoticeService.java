@@ -72,4 +72,7 @@ public class NoticeService {
 
     public void update(NoticeDTO noticeDTO) {noticeRepository.update(noticeDTO);
     }
+
+    public void delete(Long id) {noticeRepository.delete(id);
+    }
 }

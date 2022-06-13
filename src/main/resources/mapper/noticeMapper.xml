@@ -15,6 +15,7 @@
     <update id="updateHits" parameterType="Long">update  notice_table set noticeHits=noticeHits+1 where id=#{id}</update>
     <update  parameterType="notice" id="update">update notice_table set noticeTitle=#{noticeTitle},
                          noticeContents=#{noticeContents} where id=${id}</update>
+    <delete parameterType="Long"  id="delete">delete from notice_table where id=#{id}</delete>
 
 
 </mapper>
