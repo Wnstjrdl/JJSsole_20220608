@@ -20,9 +20,10 @@
                 <c:if test="${sessionScope.loginMemberId != null}">
                 <li><button class="btn btn-warning" onclick="location.href='/board/save'">글작성</button></li>
                 </c:if>
-
+                <li><button class="btn btn-warning" onclick="location.href='/notice/paging'">공지사항</button></li>
+           <c:if test="${sessionScope.loginMemberId eq 'admin'}">
                     <li><button class="btn btn-warning" onclick="location.href='/notice/save'">공지작성</button></li>
-
+           </c:if>
 
             </ul>
 

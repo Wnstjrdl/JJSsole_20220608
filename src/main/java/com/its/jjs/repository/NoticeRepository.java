@@ -25,4 +25,7 @@ public class NoticeRepository {
     public int noticeCount() {
         return  sql.selectOne("Notice.count");
     }
+
+    public NoticeDTO findById(Long id) {return  sql.selectOne("Notice.findById",id);
+    }
 }

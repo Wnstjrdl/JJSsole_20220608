@@ -64,4 +64,8 @@ public class NoticeService {
 
 
     }
+
+    public NoticeDTO findById(Long id) {
+        return noticeRepository.findById(id);
+    }
 }

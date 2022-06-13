@@ -14,7 +14,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
     <style>
         span {
             font-weight: bold;
@@ -37,7 +37,7 @@
                 <tr>
                     <td>${notice.id}</td>
                  <td>${notice.noticeWriter}</td>
-                    <td>${notice.noticeTitle}</td>
+                    <td><a href="/notice/detail?page=${paging.page}&id=${notice.id}">${notice.noticeTitle}</a></td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
                                         value="${notice.noticeCreatedDate}"></fmt:formatDate></td>
                     <td>${notice.noticeHits}</td>

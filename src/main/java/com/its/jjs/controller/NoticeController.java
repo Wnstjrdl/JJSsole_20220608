@@ -29,6 +29,7 @@ public class NoticeController {
         return "redirect:/notice/paging";
     }
     @GetMapping("/paging")
+    // 공지사항 페이징 처리
     public  String paging(@RequestParam(value = "page",required = false,defaultValue = "1")int page, Model model){
         List<NoticeDTO> noticeList= noticeService.pagingList(page);
         PageDTO paging=noticeService.paging(page);
@@ -36,4 +37,17 @@ public class NoticeController {
         model.addAttribute("paging",paging);
           return "noticePages/pagingList";
     }
+    //공지사항 상세정보출력
+    @GetMapping("/detail")
+
+    public  String detail(@RequestParam("id")Long id,Model model,
+                          @RequestParam(value = "page",required = false,defaultValue = "1")int page){
+        NoticeDTO noticeDTO=noticeService.findById(id);
+        model.addAttribute("notice",noticeDTO);
+        model.addAttribute("page",page);
+        return "noticePages/detail";
+    }
+
+
+
 }

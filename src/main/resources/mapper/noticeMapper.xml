@@ -11,4 +11,5 @@
         select *from notice_table order by id desc limit #{start},#{limit}
     </select>
     <select id="count" resultType="int">select count(id)from notice_table </select>
+    <select parameterType="Long" id="findById" resultType="notice">select * from notice_table where id=#{id}</select>
 </mapper>
