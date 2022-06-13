@@ -70,6 +70,11 @@ public class MemberController {
         model.addAttribute("memberUpdate",memberDTO);
         return  "memberPages/update";
     }
-
+    //회원수정 처리
+@PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO){
+        memberService.update(memberDTO);
+    return  "redirect:/member/findAll?id="+memberDTO.getId();
+}
 
 }

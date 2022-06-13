@@ -42,4 +42,7 @@ public class MemberService {
     public MemberDTO findById(Long id) {
         return memberRepository.findById(id);
     }
+
+    public void update(MemberDTO memberDTO) {memberRepository.update(memberDTO);
+    }
 }
