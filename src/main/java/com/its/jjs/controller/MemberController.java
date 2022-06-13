@@ -74,7 +74,13 @@ public class MemberController {
 @PostMapping("/update")
     public String update(@ModelAttribute MemberDTO memberDTO){
         memberService.update(memberDTO);
-    return  "redirect:/member/findAll?id="+memberDTO.getId();
+    return  "redirect:/member/detail?id="+memberDTO.getId();
 }
-
+    //마이페이지
+    @GetMapping("/detail")
+    public  String findById(@RequestParam("id")Long id,Model model){
+           MemberDTO memberDTO= memberService.findById(id);
+           model.addAttribute("member",memberDTO);
+                   return "memberPages/myPage";
+    }
 }

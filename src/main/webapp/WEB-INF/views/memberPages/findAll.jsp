@@ -15,6 +15,8 @@
 </head>
 
 <body>
+<button class="btn btn-warning" onclick="location.href='/'">초기화면으로 돌아가기</button>
+<c:if test="${sessionScope.loginMemberId eq 'admin'}">
     <h2>findAll.jsp</h2>
 <div class="container">
     <table class="table">
@@ -36,12 +38,12 @@
                 <td>${member.memberEmail}</td>
                 <td>${member.memberMobile}</td>
                 <td class="btn btn-warning"><a href="/member/delete?id=${member.id}">삭제하기</a> </td>
-                <td class="btn btn-warning"><a href="/member/update?id=${member.id}">수정하기</a> </td>
-
             </tr>
         </c:forEach>
+        </c:if>
     </table>
 </div>
+
 </body>
 
 </html>
