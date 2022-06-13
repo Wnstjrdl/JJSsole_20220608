@@ -8,8 +8,9 @@
     insert into  notice_table(noticeTitle,noticeWriter,noticeContents,noticeCreatedDate,noticeFileName)
        values (#{noticeTitle},#{noticeWriter},#{noticeContents},now(),#{noticeFileName}) </insert>
     <select parameterType="java.util.HashMap" id="pagingList" resultType="notice">
-        select *from notice_table order by id desc limit #{start},#{limit}
+        select *from notice_table order by noticeCreatedDate desc limit #{start},#{limit}
     </select>
     <select id="count" resultType="int">select count(id)from notice_table </select>
     <select parameterType="Long" id="findById" resultType="notice">select * from notice_table where id=#{id}</select>
+    <update id="updateHits" parameterType="Long">update  notice_table set noticeHits=noticeHits+1 where id=#{id}</update>
 </mapper>

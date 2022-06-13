@@ -66,6 +66,7 @@ public class NoticeService {
     }
 
     public NoticeDTO findById(Long id) {
+        noticeRepository.updateHits(id);
         return noticeRepository.findById(id);
     }
 }

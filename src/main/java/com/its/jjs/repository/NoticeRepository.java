@@ -28,4 +28,7 @@ public class NoticeRepository {
 
     public NoticeDTO findById(Long id) {return  sql.selectOne("Notice.findById",id);
     }
+
+    public void updateHits(Long id) {sql.update("Notice.updateHits",id);
+    }
 }

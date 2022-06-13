@@ -10,6 +10,7 @@ import java.util.Map;
 
 @Repository
 public class BoardRepository {
+
     @Autowired
     private SqlSessionTemplate sql;
 
@@ -34,5 +35,6 @@ public class BoardRepository {
     }
 
 
-
+    public void updateHits(Long id) {sql.update("Board.updateHits",id);
+    }
 }
