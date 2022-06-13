@@ -63,4 +63,13 @@ public class MemberController {
         memberService.delete(id);
         return  "redirect:/member/findAll";
     }
+    @GetMapping("/update")
+    //회원수정 화면
+    public String updateForm(@RequestParam("id") Long id, Model model){
+        MemberDTO memberDTO= memberService.findById(id);
+        model.addAttribute("memberUpdate",memberDTO);
+        return  "memberPages/update";
+    }
+
+
 }

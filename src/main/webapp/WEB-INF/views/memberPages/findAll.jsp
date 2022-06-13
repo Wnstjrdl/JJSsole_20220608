@@ -36,6 +36,7 @@
                 <td>${member.memberEmail}</td>
                 <td>${member.memberMobile}</td>
                 <td class="btn btn-warning"><a href="/member/delete?id=${member.id}">삭제하기</a> </td>
+                <td class="btn btn-warning"><a href="/member/update?id=${member.id}">수정하기</a> </td>
 
             </tr>
         </c:forEach>
