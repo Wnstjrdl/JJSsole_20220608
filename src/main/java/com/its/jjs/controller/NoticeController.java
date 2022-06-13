@@ -1,5 +1,6 @@
 package com.its.jjs.controller;
 
+import com.its.jjs.dto.BoardDTO;
 import com.its.jjs.dto.NoticeDTO;
 import com.its.jjs.dto.PageDTO;
 import com.its.jjs.service.NoticeService;
@@ -47,6 +48,25 @@ public class NoticeController {
         model.addAttribute("page",page);
         return "noticePages/detail";
     }
+    //수정화면
+    @GetMapping("/update")
+
+    public String updateForm(@RequestParam("id")Long id,Model model){
+        NoticeDTO noticeDTO=noticeService.findById(id);
+        model.addAttribute("noticeUpdate",noticeDTO);
+        return "noticePages/update";
+    }
+
+
+
+
+    //수정 처리
+    @PostMapping("/update")
+    public String update(@ModelAttribute NoticeDTO noticeDTO){
+        noticeService.update(noticeDTO);
+        return "redirect:/notice/detail?id="+noticeDTO.getId();
+    }
+
 
 
 

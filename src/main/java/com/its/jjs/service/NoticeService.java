@@ -69,4 +69,7 @@ public class NoticeService {
         noticeRepository.updateHits(id);
         return noticeRepository.findById(id);
     }
+
+    public void update(NoticeDTO noticeDTO) {noticeRepository.update(noticeDTO);
+    }
 }

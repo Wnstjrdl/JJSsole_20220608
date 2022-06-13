@@ -68,6 +68,9 @@
     <button class="btn btn-danger" onclick="location.href='/board/update?id=${board.id}'">수정</button>
 
 </c:if>
+<c:if test="${sessionScope.loginMemberId eq 'admin'}">
+    <button class="btn btn-danger" onclick="location.href='/board/delete?id=${board.id}'">삭제</button>
+</c:if>
 
     <script>
         $("#comment-write-btn").click(function (){

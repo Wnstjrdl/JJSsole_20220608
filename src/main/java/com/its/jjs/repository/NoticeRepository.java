@@ -31,4 +31,7 @@ public class NoticeRepository {
 
     public void updateHits(Long id) {sql.update("Notice.updateHits",id);
     }
+
+    public void update(NoticeDTO noticeDTO) {sql.update("Notice.update",noticeDTO);
+    }
 }
