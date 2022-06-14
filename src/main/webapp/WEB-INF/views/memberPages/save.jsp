@@ -11,26 +11,66 @@
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+
+    body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+    }
+
+    .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    }
+
+    .form-signin .form-floating:focus-within {
+    z-index: 2;
+    }
+    </style>
+
+
 </head>
 <body>
 <div class="container">
     <h2 class="display-4 fw-normal">save.jsp</h2>
     <div class="py-5 text-center">
-
         <form action="/member/save" method="post" enctype="multipart/form-data">
-            <input class="form-control mb-2" type="text"  onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디">
+            <div class="form-floating">
+            <input class="form-control mb-2" type="text"  onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디를 입력하세요">
+                <label for="memberId">아이디를 입력하세요</label>
             <span id="dup-check-result"></span>
-            <input class="form-control mb-2" type="text"  id="memberPassword" name="memberPassword" placeholder="비밀번호를 입력하세요">
+            </div>
+            <div class="form-floating">
+            <input class="form-control mb-2"  type="text"  id="memberPassword" name="memberPassword" placeholder="비밀번호를 입력하세요">
             <div  id="pwCheck"></div>
-            <input class="form-control mb-2" type="text" name="memberName" placeholder="이름를 입력하세요">
-            <input class="form-control mb-2" type="text" name="memberEmail" placeholder="이메일를 입력하세요">
+                <label for="memberPassword">비밀번호를 입력하세요</label>
+            </div>
+            <div class="form-floating">
+            <input class="form-control mb-2" type="text" id="memberName" name="memberName" placeholder="이름을 입력하세요">
+                <label for="memberName">이름을 입력하세요</label>
+            </div>
+            <div class="form-floating">
+            <input class="form-control mb-2" type="text" id="memberEmail" name="memberEmail" placeholder="이메일를 입력하세요">
+                <label for="memberEmail">이메일을 입력하세요</label>
+            </div>
+            <div class="form-floating">
             <input class="form-control mb-2" type="text" id="memberMobile" name="memberMobile" placeholder="전화번호를 입력하세요">
             <div id="mobileCheck"></div>
-            프로필사진을 등록해주세요:<input type="file" name="memberFile">
+                <label for="memberMobile">전화번호를 입력하세요</label>
+            </div>
+
+            <label><input type="radio" name="gender" value="남" >남자</label> &nbsp;
+            <label><input type="radio" name="gender" value="여" >여자</label><br>
+
+            프로필사진을 등록해주세요:<input type="file" name="memberFile" >
             <input class="btn btn-danger" type="submit" value="회원가입">
         </form>
     </div>
 </div>
+
 </body>
 <script>
     const duplicateCheck = () => {
@@ -72,10 +112,11 @@
     const mobileJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
      $('#memberMobile').blur(function () {
          if(mobileJ.test($('#memberMobile').val())){
-             console.log('true');
+             console.log("true");
              $('#mobileCheck').text('ok');
              $('#mobileCheck').css('color','green');
          }else {
+             console.log("false");
              $('#mobileCheck').text('잘못된 입력 방식입니다');
              $('#mobileCheck').css('color','red');
          }

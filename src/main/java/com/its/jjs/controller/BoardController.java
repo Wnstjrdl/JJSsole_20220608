@@ -2,7 +2,6 @@ package com.its.jjs.controller;
 
 import com.its.jjs.dto.BoardDTO;
 import com.its.jjs.dto.CommentDTO;
-import com.its.jjs.dto.NoticeDTO;
 import com.its.jjs.dto.PageDTO;
 import com.its.jjs.service.BoardService;
 import com.its.jjs.service.CommentService;

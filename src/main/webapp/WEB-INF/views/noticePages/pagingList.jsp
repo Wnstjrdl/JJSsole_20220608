@@ -96,7 +96,7 @@
                 </c:when>
                 <c:otherwise>
                     <li class="page-item">
-                        <a class="page-link" href="/notice/paging?page${paging.page+1}">[다음]</a>
+                        <a class="page-link" href="/notice/paging?page=${paging.page+1}">[다음]</a>
                     </li>
                 </c:otherwise>
             </c:choose>

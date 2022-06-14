@@ -91,14 +91,14 @@
           </c:choose>
           </c:forEach>
           <c:choose>
-            <c:when test=" ${paging.page>=paging.maxPage}">
-                <li class="page-item disabled">
-                    <a class="page-link">[다음]</a>
-                </li>
-            </c:when>
+              <c:when test="${paging.page>=paging.maxPage}">
+                  <li class="page-item disabled">
+                      <a class="page-link">[다음]</a>
+                  </li>
+              </c:when>
               <c:otherwise>
                 <li class="page-item">
-                  <a class="page-link" href="/board/paging?page${paging.page+1}">[다음]</a>
+                  <a class="page-link" href="/board/paging?page=${paging.page+1}">[다음]</a>
                 </li>
               </c:otherwise>
 
