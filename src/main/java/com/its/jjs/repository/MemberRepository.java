@@ -28,4 +28,8 @@ public class MemberRepository {
 
     public void update(MemberDTO memberDTO) {sql.update("Member.update",memberDTO);
     }
+
+    public String duplicateCheck(String memberId) {
+        return sql.selectOne("Member.duplicate",memberId);
+    }
 }

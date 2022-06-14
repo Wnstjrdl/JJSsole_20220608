@@ -23,10 +23,10 @@
             이름:<input type="text" name="memberName" value="${memberUpdate.memberName}" class="form-control" readonly><br />
             이메일:<input type="text" name="memberEmail" value="${memberUpdate.memberEmail}" class="form-control" readonly><br />
             전화번호:<input type="text" name="memberMobile" value="${memberUpdate.memberMobile}" class="form-control" ><br />
-            <button class="btn btn-primary" onclick="location.href='/member/update'">수정하기</button>
+            <button class="btn btn-warning  "  onclick=" updateAlert()" >수정하기</button>
         </form>
 
-    
+
 
     </div>
 </div>
@@ -40,6 +40,7 @@
         const  passwordDB='${memberUpdate.memberPassword}';
         if(passwordConfirm == passwordDB){
             updateForm.submit();
+
         }else {
             alert("비밀번호가 일치하지않습니다")
         }
@@ -52,6 +53,11 @@
         }else {
             alert("비밀번호가 일치하지않습니다")
         }
+    }
+    const updateAlert = () => {
+        alert("수정이완료되었습니다")
+      location.href="/member/update"
+
     }
 
 </script>

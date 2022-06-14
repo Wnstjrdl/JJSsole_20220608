@@ -104,5 +104,11 @@ public class MemberController {
         model.addAttribute("member",memberDTO);
         return  "memberPages/passwordCheckDelete";
     }
+    //아이디 중복체크
+    @PostMapping("/duplicate-check")
+    public @ResponseBody String duplicateCheck(@RequestParam("memberId") String memberId) {
+        String checkResult = memberService.duplicateCheck(memberId);
+        return checkResult;
+    }
 
 }

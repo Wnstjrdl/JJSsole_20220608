@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class MemberService {
+
     @Autowired
     private MemberRepository memberRepository;
 
@@ -44,5 +45,14 @@ public class MemberService {
     }
 
     public void update(MemberDTO memberDTO) {memberRepository.update(memberDTO);
+    }
+
+    public String duplicateCheck(String memberId) {
+        String checkResult= memberRepository.duplicateCheck(memberId);
+        if(checkResult == null){
+            return "ok";
+        }else{
+            return  "no";
+        }
     }
 }

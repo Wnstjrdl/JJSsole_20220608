@@ -24,6 +24,7 @@
             const  passwordConfirm=document.getElementById("passwordConfirm").value;
             const  passwordDB='${member.memberPassword}';
             if(passwordConfirm == passwordDB){
+
                location.href="/member/update?id=${member.id}";
             }else {
                 alert("비밀번호가 일치하지않습니다")
