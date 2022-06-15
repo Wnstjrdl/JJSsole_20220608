@@ -35,24 +35,26 @@ private BoardRepository boardRepository;
     private static final int BLOCK_LIMIT=3;
 
     public List<BoardDTO> pagingList(int page) {
-        int pagingStart= (page-1) *PAGE_LIMIT;
-        Map<String,Integer> pagingParam= new HashMap<>();
-        pagingParam.put("start",pagingStart);
-        pagingParam.put("limit",BLOCK_LIMIT);
-        List<BoardDTO> pagingList=boardRepository.pagingList(pagingParam);
-        return  pagingList;
+
+        int pagingStart = (page-1) * PAGE_LIMIT;
+        Map<String, Integer> pagingParam = new HashMap<>();
+        pagingParam.put("start", pagingStart);
+        pagingParam.put("limit", PAGE_LIMIT);
+        List<BoardDTO> pagingList = boardRepository.pagingList(pagingParam);
+        return pagingList;
     }
 
-    public PageDTO paging(int page) {
-        int boardCount=boardRepository.boardCount();
 
-        int maxPage=(int) (Math.ceil((double)boardCount/PAGE_LIMIT));
-        int startPage=(((int)(Math.ceil((double)page/BLOCK_LIMIT)))-1)*BLOCK_LIMIT+1;
-        int endPage=startPage+BLOCK_LIMIT-1;
+    public PageDTO paging(int page) {
+        int boardCount= boardRepository.boardCount();
+
+        int maxPage=(int)(Math.ceil((double)boardCount/PAGE_LIMIT));
+        int startPage=(((int)(Math.ceil((double)page/BLOCK_LIMIT)))-1)* BLOCK_LIMIT+1;
+        int endPage= startPage+BLOCK_LIMIT -1;
         if(endPage>maxPage)
             endPage=maxPage;
 
-        PageDTO paging= new PageDTO();
+        PageDTO paging= new  PageDTO();
         paging.setPage(page);
         paging.setStartPage(startPage);
         paging.setEndPage(endPage);
@@ -80,6 +82,9 @@ private BoardRepository boardRepository;
         List<BoardDTO> searchList=boardRepository.search(searchParam);
         return searchList;
     }
+
+
+
 
 
 

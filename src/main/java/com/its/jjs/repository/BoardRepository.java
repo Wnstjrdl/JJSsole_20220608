@@ -37,4 +37,7 @@ public class BoardRepository {
 
     public void updateHits(Long id) {sql.update("Board.updateHits",id);
     }
+
+
+
 }

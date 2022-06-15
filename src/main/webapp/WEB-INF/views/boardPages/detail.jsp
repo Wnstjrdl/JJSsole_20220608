@@ -17,6 +17,7 @@
 </head>
 <body>
     <h2>detail.jsp</h2>
+
     <img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
          alt="" height="100" width="100"><br /><br />
      글번호:${board.id}<br />

@@ -43,12 +43,13 @@
 <body class="  text-white bg-primary">
 
 <header>
- <h1>index</h1>
+ <h1>메인 화면</h1>
  <nav>
   <ul>
    <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
    <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
    <button class="btn btn-warning   " onclick="paging()">게시판</button>
+   <a href="/board/gallery">이동</a>
    <c:if test="${sessionScope.loginMemberId eq 'admin'}">
    <button class="btn btn-danger   " onclick="admin()">관리자 페이지로이동</button>
    </c:if>
@@ -64,6 +65,9 @@
 
  </form>
 </header>
+
+
+
 
 </body>
 

@@ -32,14 +32,11 @@
                 <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
                                     value="${board.boardCreatedDate}"></fmt:formatDate></td>
                 <td>${board.boardHits}</td>
-
             </tr>
         </c:forEach>
-
-
-
     </table>
 </div>
 </body>
-
 </html>
+
+

@@ -35,7 +35,7 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="display-4 fw-normal">save.jsp</h2>
+    <h2 class="display-4 fw-normal">회원가입</h2>
     <div class="py-5 text-center">
         <form action="/member/save" method="post" enctype="multipart/form-data">
             <div class="form-floating">
@@ -62,10 +62,11 @@
                 <label for="memberMobile">전화번호를 입력하세요</label>
             </div>
 
+
+            프로필사진을 등록해주세요:<input class="form-control" type="file" name="memberFile" >
+                                                                                                <br />
             <label><input type="radio" name="gender" value="남" >남자</label> &nbsp;
             <label><input type="radio" name="gender" value="여" >여자</label><br>
-
-            프로필사진을 등록해주세요:<input type="file" name="memberFile" >
             <input class="btn btn-danger" type="submit" value="회원가입">
         </form>
     </div>

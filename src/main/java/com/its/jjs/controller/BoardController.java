@@ -34,11 +34,11 @@ public class BoardController {
     }
     //페이징 리스트
     @GetMapping("/paging")
-    public  String paging(@RequestParam(value = "page",required = false,defaultValue ="1")int page, Model model){
-        List<BoardDTO> boardDTOList=boardService.pagingList(page);
-        PageDTO paging=boardService.paging(page);
-        model.addAttribute("boardList",boardDTOList);
-        model.addAttribute("paging",paging);
+    public String paging(@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
+        List<BoardDTO> boardList = boardService.pagingList(page);
+        PageDTO paging = boardService.paging(page);
+        model.addAttribute("boardList", boardList);
+        model.addAttribute("paging", paging);
         return "boardPages/pagingList";
     }
     // 상세 조회
@@ -88,6 +88,8 @@ public class BoardController {
        model.addAttribute("boardList",searchList);
       return  "boardPages/list";
     }
+
+
 
 
 

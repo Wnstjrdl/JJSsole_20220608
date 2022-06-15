@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <h2>login jsp</h2>
+    <h2>로그인</h2>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <style>
     body {
