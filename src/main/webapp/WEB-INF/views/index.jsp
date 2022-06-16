@@ -38,6 +38,9 @@
     const admin = () => {
       location.href="/member/admin"
     }
+    const gallery = () => {
+      location.href="/board/gallery"
+    }
 
 </script>
 <body class="  text-white bg-primary">
@@ -49,7 +52,8 @@
    <button class="btn btn-warning  "  onclick="saveForm()" >회원가입</button>
    <button class="btn btn-warning   " onclick="loginForm()">로그인</button>
    <button class="btn btn-warning   " onclick="paging()">게시판</button>
-   <a href="/board/gallery">이동</a>
+   <button class="btn btn-warning  " onclick="gallery()">포토게시판으로</button>
+
    <c:if test="${sessionScope.loginMemberId eq 'admin'}">
    <button class="btn btn-danger   " onclick="admin()">관리자 페이지로이동</button>
    </c:if>

@@ -88,8 +88,11 @@ public class BoardController {
        model.addAttribute("boardList",searchList);
       return  "boardPages/list";
     }
-
-
+   // 갤러리로이동
+    @GetMapping("/gallery")
+    public String gallery(){
+        return "boardPages/gallery";
+    }
 
 
 
