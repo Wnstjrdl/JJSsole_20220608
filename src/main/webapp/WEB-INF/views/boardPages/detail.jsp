@@ -57,6 +57,7 @@
                    <td>${comment.commentWriter}</td>
                    <td>${comment.commentContents}</td>
                    <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${comment.commentCreatedDate}"></fmt:formatDate></td>
+
                </tr>
            </c:forEach>
         </table>
@@ -94,6 +95,7 @@
                     output +="<tr><td>작성자</td>";
                     output +="<tr><td>작성내용</td>";
                     output +="<tr><td>작성시간</td></tr>";
+
                     for(let i in result){
                         output += "<tr>";
                         output += "<td>"+result[i].id+"</td>";
@@ -107,6 +109,10 @@
                     document.getElementById('commentWriter').value='';
                     document.getElementById('commentContents').value='';
                 },
+                error: function (){
+                    alert("회원만 작성가능합니다!!!!")
+                }
+
             });
         });
 ;

@@ -65,7 +65,8 @@
    <option value="boardWriter">작성자</option>
   </select>
   <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
+  <button class="btn btn-outline-success" type="submit">Search</button><br />
+
 
  </form>
 </header>

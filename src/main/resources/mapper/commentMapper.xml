@@ -12,4 +12,5 @@
     <select id="findAll" parameterType="Long" resultType="comment">
         select *from comment_table where boardId=#{boardId} order by id desc
     </select>
+
 </mapper>

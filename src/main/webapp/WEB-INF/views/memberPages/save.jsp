@@ -56,6 +56,7 @@
             <div class="form-floating">
             <input class="form-control mb-2" type="text" id="memberEmail" name="memberEmail" placeholder="이메일를 입력하세요">
                 <label for="memberEmail">이메일을 입력하세요</label>
+
             </div>
             <div class="form-floating">
             <input class="form-control mb-2" type="text" id="memberMobile" name="memberMobile" placeholder="전화번호를 입력하세요">

@@ -17,4 +17,6 @@ public class CommentRepository {
 
     public List<CommentDTO> findAll(Long boardId) {return  sql.selectList("Comment.findAll",boardId);
     }
+
+
 }
