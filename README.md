@@ -79,4 +79,4 @@ noticeCreatedDate timestamp,<br />
 constraint pk_notice_table primary key(id),<br />
 constraint fk_notice_table foreign key(noticeWriter) references member_table(memberId) on delete cascade
 );<br />
-alter table notice_table add column noticeFileName varchar(100);<br />
+alter table notice_table add column noticeFileName varchar(100); <br />
